@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>SPA Chapter 4</title>
+    <!-- third-party stylesheets -->
+    <!-- our stylesheets -->
+    <link rel="stylesheet" type="text/css" href="css/spa.css">
+    <link rel="stylesheet" type="text/css" href="css/spa.chat.css">
+    <link rel="stylesheet" type="text/css" href="css/spa.shell.css">
+    <link rel="stylesheet" type="text/css" href="css/spa.avtr.css">
+</head>
+<body>
+<div id="spa" >
+    <div class="spa-shell-head">
+        <div  class="spa-shell-head-logo"></div>
+        <div  class="spa-shell-head-acct"></div>
+        <div  class="spa-shell-head-search"></div>
+    </div>
+    <div class="spa-shell-main">
+        <div class="spa-shell-main-nav"></div>
+        <div class="spa-shell-main-content"></div>
+    </div>
+    <div class="spa-shell-root">
+    </div>
+    <div class="spa-shell-chat"></div>
+    <div class="spa-shell-modal"></div>
+
+</div>
+<!-- third-party javascript -->
+<script type="text/javascript" src="js/lib/taffy.js"></script>
+<script type="text/javascript" src="js/jq/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="js/jq/jquery.uriAnchor.js"></script>
+<script type="text/javascript" src="js/jq/jquery.event.gevent.js"></script>
+<script type="text/javascript" src="js/jq/jquery.event.ue.js"></script>
+<!-- our javascript -->
+<script type="text/javascript" src="js/spa.js"></script>
+<script type="text/javascript" src="js/spa.util.js"></script>
+<script type="text/javascript" src="js/spa.data.js"></script>
+<script type="text/javascript" src="js/spa.fake.js"></script>
+<script type="text/javascript" src="js/spa.model.js"></script>
+<script type="text/javascript" src="js/spa.util_b.js"></script>
+<script type="text/javascript" src="js/spa.shell.js"></script>
+<script type="text/javascript" src="js/spa.chat.js"></script>
+<script type="text/javascript" src="js/spa.avtr.js"></script>
+<script>
+    $(function () {
+                // if we needed to configure the root module,
+                // we would invoke spa.configModule first
+                spa.initModule( $('#spa') );
+            }
+    );
+</script>
+</body>
+</html>

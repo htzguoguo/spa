@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+    function persion() {
+        var i;
+        for ( i = 0; i < 10; i++ ) {
+        }
+    }
+    function hoisted() {
+        console.log( v );
+        var v = 10;
+        console.log( v );
+
+    }
+    hoisted();
+
+    var proto = {
+        sentence : 4,
+        probation : 2
+    };
+    var Persion = function ( name, age ) {
+        this.name = name;
+        this.age = age;
+    }
+    Persion.prototype = proto;
+
+    var p1 = new Persion( 'mik', 33 );
+    var p2 = new Persion( 'kill', 20 );
+
+    console.log( p1.name, p1.sentence );
+    console.log( p2.name, p2.sentence );
+
+    var p3 = Object.create( proto );
+    p3.name = 'liv';
+    p3.age = 11;
+
+    var p4 = Object.create( proto );
+    p4.name = 'nok';
+    p4.age = 15;
+
+    console.log( p3.name, p3.sentence );
+
+    var  makePersion = function ( name, age ) {
+        var p = Object.create( proto );
+        p.name = name;
+        p.age = age;
+        return p;
+    }
+
+    var p5 = makePersion( 'mik', 12 );
+    console.log( p5.name, p5.sentence );
+
+    var objectCreate = function ( arg ) {
+        if ( !arg ) {
+            return {};
+        }
+        function obj() {};
+        obj.prototype = arg;
+        return new obj;
+    }
+
+    Object.create = Object.create || objectCreate;
+
+    console.log( p5 );
+    console.log( p5.__proto__ );
+    console.log( p5.__proto__.__proto__ );
+    console.log( p5.__proto__.__proto__.__proto__ );
+
+    p5.sentence = 10;
+    console.log( p5 );
+
+    delete p5.sentence;
+    console.log( p5 );
+
+    var person = ( function () {
+        var title = 'jjjjj mmm';
+        return {
+            setTitle : function (tt) {
+                title = tt;
+            },
+            getTitle : function () {
+                return title;
+            },
+            title : title
+        }
+    } () );
+
+    console.log( person.title );
+    person.setTitle( 'ccsseee' );
+    console.log( person.getTitle() );
+</script>
+</body>
+</html>
